@@ -1,13 +1,15 @@
 import React from "react";
 import { range } from "../../utils";
-function GuessSlots({ guess }) {
+import {checkGuess} from "../../../src/game-helpers";
+function GuessSlots({ guess,answer }) {
+  const result = checkGuess(guess, answer);
   return (
     <div className="guess-results">
       <p className="guess">
         {range(5).map((num) => (
-          <span className="cell" key={num}>
-            {guess ? guess[num] : undefined}
-          </span>
+            <span className={result ?  "cell "+result[num].status : "cell"} key={num}>
+            {result ? result[num].letter  : undefined}
+            </span>
         ))}
       </p>
     </div>

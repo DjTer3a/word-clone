@@ -15,7 +15,7 @@ function Game() {
   const [guesses, setGuesses] = useState([]);
   return (
     <>
-      <GuessTrack guesses={guesses} />
+      <GuessTrack guesses={guesses} answer={answer}/>
       <TextInput
         guess={guess}
         setGuess={setGuess}
