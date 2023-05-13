@@ -13,14 +13,20 @@ console.info({ answer });
 function Game() {
   const [guess, setGuess] = useState("");
   const [guesses, setGuesses] = useState([]);
+  const [gameStatus, setGameStatus] = useState("running");
+  
   return (
     <>
+      {gameStatus}
       <GuessTrack guesses={guesses} answer={answer}/>
       <TextInput
         guess={guess}
         setGuess={setGuess}
         setGuesses={setGuesses}
         guesses={guesses}
+        answer={answer}
+        gameStatus={gameStatus}
+        setGameStatus= {setGameStatus}
       />
     </>
   );
