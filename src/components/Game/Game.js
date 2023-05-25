@@ -17,7 +17,6 @@ function Game() {
   
   return (
     <>
-      {gameStatus}
       <GuessTrack guesses={guesses} answer={answer}/>
       <TextInput
         guess={guess}
